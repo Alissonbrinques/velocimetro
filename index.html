@@ -44,7 +44,7 @@ function updatePosition(position){
   //console.log(position.coords.speed * 3.6)
   	if(position.coords.speed === null)
     		return
-  	velocidade.textContent = (position.coords.speed * 3.6 /1.609).toFixed(1)
+  	velocidade.textContent = (position.coords.speed * 3.6 /1.609)
 }
 
 function handleError(error){
