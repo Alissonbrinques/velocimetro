@@ -27,16 +27,16 @@ width: 120px;
     padding:50px;
 }
 #velocidade{
-  font-family: "Bungee Shade";
-
-  font-size: 220px;
-  color:rgb(209, 209, 209);
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 160px;
+  color:rgb(231, 231, 231);
   padding:50px;
 }
 
 p{
     text-transform: uppercase;
-  font-family: "Bungee";
+  font-family: "Bungee Shade";
   font-size: 60px;
   font-weight: 600;
   color:rgb(223, 215, 102);
