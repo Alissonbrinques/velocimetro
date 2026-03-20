@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocimetro</title>
+</head>
+<body>
+    <header>
+        <img src="/css/img1.png" alt="">
+    </header>
+
+
+    <div id ="velocimetro">
+        <div id="velocidade">0</div>
+        <p>mph</p>
+    </div>
+</body>
+<script>
+const velocimetro = document.querySelector("#velocimetro")
+const velocidade = document.querySelector("#velocidade")
+
+let watchID = null
+const option = {enableHighAccuracy:true}
+
+velocimetro.addEventListener("click",()=>{
+  	console.log(watchID)
+	if(!watchID){
+			watchID = navigator.geolocation.watchPosition(
+ 			 updatePosition, handleError, option)
+	}
+   else{
+			navigator.geolocation.clearWatch(watchID)
+  			watchID = null
+  			velocidade.textContent = 0
+	}
+})
+
+//navigator.geolocation.watchPosition(
+ // updatePosition, handleError)
+
+function updatePosition(position){ 
+  //console.log(position.coords.speed * 3.6)
+  	if(position.coords.speed === null)
+    		return
+  	velocidade.textContent = (position.coords.speed * 3.6 /1.609).toFixed(1)
+}
+
+function handleError(error){
+		console.log(error.message)
+}
+</script>
+</html>
